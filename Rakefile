@@ -1,8 +1,30 @@
 require 'rubygems'
+
+gems = [
+  [ 'cucumber', '=0.3.93' ],
+  [ 'rspec', '=1.2.8' ],
+  [ 'winton-active_wrapper', '=0.1.9' ]
+]
+
+gems.each do |name, version|
+  begin
+    gem name, version
+  rescue Exception
+    $:.unshift "#{File.dirname(__FILE__)}/vendor/#{name}/lib"
+  end
+end
+
 require 'rake'
+require 'active_wrapper/tasks'
+require 'cucumber/rake/task'
 require 'rake/gempackagetask'
 require 'spec/rake/spectask'
 require 'gemspec'
+
+ActiveWrapper::Tasks.new(
+  :base => File.dirname(__FILE__),
+  :env => ENV['ENV']
+)
 
 desc "Generate gemspec"
 task :gemspec do

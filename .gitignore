@@ -1,5 +1,10 @@
 .DS_Store
 *.gem
+*.log
+config/database.yml
+config/deploy.rb
+config/mail.yml
 coverage
+log
 pkg
 tmp
