@@ -3,8 +3,7 @@ require 'rubygems'
 gems = [
   [ 'haml', '=2.2.2' ],
   [ 'sinatra', '=0.9.4' ],
-  [ 'winton-active_wrapper', '=0.1.9' ],
-  [ 'winton-secret_key', '=0.1.0' ]
+  [ 'winton-active_wrapper', '=0.1.9' ]
 ]
 
 gems.each do |name, version|
@@ -18,7 +17,6 @@ end
 require 'haml'
 require 'sinatra/base'
 require 'active_wrapper'
-require 'secret_key'
 
 class Application < Sinatra::Base
 end

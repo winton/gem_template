@@ -19,7 +19,4 @@ Application.class_eval do
   if $mail.config
     ActionMailer::Base.raise_delivery_errors = true
   end
-  
-  # Secret key
-  $secret_key = SecretKey.new(root).read
 end
