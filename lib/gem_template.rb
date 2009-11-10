@@ -1,9 +1,9 @@
 require 'rubygems'
 
 gems = [
-  [ 'haml', '=2.2.2' ],
+  [ 'haml', '=2.2.13' ],
   [ 'sinatra', '=0.9.4' ],
-  [ 'winton-active_wrapper', '=0.1.9' ]
+  [ 'active_wrapper', '=0.2.0' ]
 ]
 
 gems.each do |name, version|

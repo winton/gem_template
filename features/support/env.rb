@@ -5,8 +5,9 @@ $:.unshift "#{$root}/lib"
 require 'gem_template'
 
 gems = [
-  [ 'rack-test', '=0.4.0' ],
-  [ 'rspec', '=1.2.7' ]
+  [ 'rack-test', '=0.5.1' ],
+  [ 'rspec', '=1.2.9' ],
+  [ 'webrat', '=0.5.3' ]
 ]
 
 gems.each do |name, version|
@@ -20,7 +21,7 @@ end
 require 'rack/test'
 require 'spec/mocks'
 require 'test/unit'
-require "#{$root}/vendor/webrat/lib/webrat"
+require 'webrat'
 
 World do
   def app
