@@ -1,26 +1,27 @@
 require 'rubygems'
 
 gems = [
-  [ 'haml', '=2.2.13' ],
+  [ 'haml', '=2.2.17' ],
   [ 'sinatra', '=0.9.4' ],
-  [ 'active_wrapper', '=0.2.0' ]
+  [ 'active_wrapper', '=0.2.3' ],
+  [ 'lilypad', '=0.3.0' ]
 ]
 
 gems.each do |name, version|
-  begin
+  if File.exists?(path = "#{File.dirname(__FILE__)}/../vendor/#{name}/lib")
+    $:.unshift path
+  else
     gem name, version
-  rescue Exception
-    $:.unshift "#{File.dirname(__FILE__)}/../vendor/#{name}/lib"
   end
 end
 
 require 'haml'
+require 'sass'
 require 'sinatra/base'
 require 'active_wrapper'
+require 'lilypad'
 
 class Application < Sinatra::Base
 end
 
-Dir["#{File.dirname(__FILE__)}/gem_template/**/*.rb"].each do |path|
-  require path
-end
+require "#{File.dirname(__FILE__)}/gem_template/boot"

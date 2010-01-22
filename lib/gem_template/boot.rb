@@ -16,7 +16,17 @@ Application.class_eval do
     :stdout => environment != :test
   )
   $db.establish_connection
-  if $mail.config
-    ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.raise_delivery_errors = true
+  
+  # Hoptoad notifier
+  if File.exists?(hoptoad = "#{root}/config/hoptoad.txt")
+    use Rack::Lilypad, File.read(hoptoad).strip
+  end
+  
+  # Require controllers, helpers, and models
+  %w(controller helper model).each do |dir|
+    Dir["#{File.dirname(__FILE__)}/#{dir}/*.rb"].sort.each do |path|
+      require path
+    end
   end
 end

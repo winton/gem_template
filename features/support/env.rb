@@ -5,16 +5,16 @@ $:.unshift "#{$root}/lib"
 require 'gem_template'
 
 gems = [
-  [ 'rack-test', '=0.5.1' ],
-  [ 'rspec', '=1.2.9' ],
-  [ 'webrat', '=0.5.3' ]
+  [ 'rack-test', '=0.5.3' ],
+  [ 'rspec', '=1.3.0' ],
+  [ 'webrat', '=0.7.0' ]
 ]
 
 gems.each do |name, version|
-  begin
+  if File.exists?(path = "#{File.dirname(__FILE__)}/../../vendor/#{name}/lib")
+    $:.unshift path
+  else
     gem name, version
-  rescue Exception
-    $:.unshift "#{File.dirname(__FILE__)}/../../vendor/#{name}/lib"
   end
 end
 
@@ -22,6 +22,10 @@ require 'rack/test'
 require 'spec/mocks'
 require 'test/unit'
 require 'webrat'
+
+Before do
+  $db.migrate_reset
+end
 
 World do
   def app

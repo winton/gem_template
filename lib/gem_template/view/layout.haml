@@ -1,0 +1,15 @@
+!!! 1.1
+%html
+  %head
+    = css 'blueprint/screen'
+    = css 'blueprint/print', 'print'
+    /[if IE 8]
+      = css 'blueprint/ie'
+    - stylesheets do |path|
+      = css path
+    %title= @title
+  %body
+    .container= yield
+    = js 'jquery'
+    - javascripts do |path|
+      = js path
