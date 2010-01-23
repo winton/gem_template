@@ -5,6 +5,7 @@ gems = [
   [ 'sinatra', '=0.9.4' ],
   [ 'active_wrapper', '=0.2.3' ],
   [ 'lilypad', '=0.3.0' ],
+  [ 'rack-flash', '=0.1.1' ],
   [ 'authlogic' ] # Vendored
 ]
 
@@ -22,3 +23,4 @@ require 'sinatra/base'
 require 'active_wrapper'
 require 'authlogic'
 require 'lilypad'
+require 'rack-flash'
