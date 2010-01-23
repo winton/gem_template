@@ -3,7 +3,7 @@ Application.class_eval do
   $db, $log, $mail = ActiveWrapper.setup(
     :base => root,
     :env => environment,
-    :stdout => environment != :test
+    :stdout => $0 != 'irb' && environment != :test
   )
   
   $db.establish_connection

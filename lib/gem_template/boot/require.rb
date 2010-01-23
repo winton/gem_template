@@ -9,7 +9,7 @@ gems = [
 ]
 
 gems.each do |name, version|
-  if File.exists?(path = "#{File.dirname(__FILE__)}/../../vendor/#{name}/lib")
+  if File.exists?(path = "#{File.dirname(__FILE__)}/../../../vendor/#{name}/lib")
     $:.unshift path
   else
     gem name, version
