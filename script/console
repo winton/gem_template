@@ -1,9 +1,7 @@
 #!/usr/bin/env ruby
 
-if ENV['IRB']
-  %w(require active_wrapper model).each do |file|
-    require File.expand_path("#{File.dirname(__FILE__)}/../lib/gem_template/boot/#{file}")
-  end
-else
-  exec "IRB=1 irb -r #{__FILE__}"
+r = %w(require application sinatra active_wrapper model).collect do |file|
+  '-r ' + File.expand_path("#{File.dirname(__FILE__)}/../lib/gem_template/boot/#{file}")
 end
+
+exec "irb #{r.join(' ')}"
