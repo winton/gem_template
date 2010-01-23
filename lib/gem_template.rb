@@ -7,6 +7,9 @@ boot += %w(application)
 # Sinatra settings
 boot += %w(sinatra)
 
+# Rack::Session
+boot += %w(session)
+
 # ActiveWrapper (database, logging, and email)
 boot += %w(active_wrapper)
 
