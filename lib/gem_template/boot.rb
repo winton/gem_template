@@ -18,6 +18,9 @@ Application.class_eval do
   $db.establish_connection
   ActionMailer::Base.raise_delivery_errors = true
   
+  # Rack session
+  use Rack::Session::Cookie
+  
   # Hoptoad notifier
   if File.exists?(hoptoad = "#{root}/config/hoptoad.txt")
     use Rack::Lilypad, File.read(hoptoad).strip

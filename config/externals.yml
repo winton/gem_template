@@ -1,0 +1,3 @@
+authlogic:
+  repo: git@github.com:winton/authlogic.git
+  path: vendor
