@@ -1,27 +1,21 @@
-require 'rubygems'
+# Require gems and vendored libraries
+boot = %w(require)
 
-gems = [
-  [ 'haml', '=2.2.17' ],
-  [ 'sinatra', '=0.9.4' ],
-  [ 'active_wrapper', '=0.2.3' ],
-  [ 'lilypad', '=0.3.0' ]
-]
+# Create Application class
+boot += %w(application)
 
-gems.each do |name, version|
-  if File.exists?(path = "#{File.dirname(__FILE__)}/../vendor/#{name}/lib")
-    $:.unshift path
-  else
-    gem name, version
-  end
+# Sinatra settings
+boot += %w(sinatra)
+
+# ActiveWrapper (database, logging, and email)
+boot += %w(active_wrapper)
+
+# Lilypad (Hoptoad notification)
+boot += %w(lilypad)
+
+# Controllers, helpers, and models
+boot += %w(controller helper model)
+
+boot.each do |file|
+  require "#{File.dirname(__FILE__)}/gem_template/boot/#{file}"
 end
-
-require 'haml'
-require 'sass'
-require 'sinatra/base'
-require 'active_wrapper'
-require 'lilypad'
-
-class Application < Sinatra::Base
-end
-
-require "#{File.dirname(__FILE__)}/gem_template/boot"
