@@ -10,6 +10,9 @@ boot += %w(sinatra)
 # Rack::Session
 boot += %w(session)
 
+# Rack::Flash
+boot += %w(flash)
+
 # ActiveWrapper (database, logging, and email)
 boot += %w(active_wrapper)
 
