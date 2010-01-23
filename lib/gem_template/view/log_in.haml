@@ -1,0 +1,13 @@
+%form{ :action => '/sessions/create', :method => 'post' }
+  
+  %p
+    %label{ :for => 'session[login]' } Login
+    %br/
+    %input{ :type => 'text', :name => 'session[login]' }
+  
+  %p
+    %label{ :for => 'session[password]' } Password
+    %br/
+    %input{ :type => 'password', :name => 'session[password]' }
+  
+  %input{ :type => 'submit', :value => 'Log in', :class => 'submit' }
