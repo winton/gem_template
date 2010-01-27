@@ -1,51 +1,12 @@
-require 'rubygems'
-
-gems = [
-  [ 'cucumber', '=0.6.2' ],
-  [ 'rspec', '=1.3.0' ],
-  [ 'active_wrapper', '=0.2.3' ]
-]
-
-gems.each do |name, version|
-  begin
-    gem name, version
-  rescue Exception
-    $:.unshift "#{File.dirname(__FILE__)}/vendor/#{name}/lib"
-  end
-end
-
-require 'rake'
-require 'active_wrapper/tasks'
-require 'cucumber/rake/task'
-require 'rake/gempackagetask'
-require 'spec/rake/spectask'
-require 'gemspec'
+require "#{File.dirname(__FILE__)}/config/dep"
+Dep.rakefile!
 
 ActiveWrapper::Tasks.new(
   :base => File.dirname(__FILE__),
   :env => ENV['ENV']
 )
 
-desc "Generate gemspec"
-task :gemspec do
-  File.open("#{Dir.pwd}/#{GEM_NAME}.gemspec", 'w') do |f|
-    f.write(GEM_SPEC.to_ruby)
-  end
-end
-
-desc "Install gem"
-task :install do
-  Rake::Task['gem'].invoke
-  `sudo gem uninstall #{GEM_NAME} -x`
-  `sudo gem install pkg/#{GEM_NAME}*.gem`
-  `rm -Rf pkg`
-end
-
-desc "Package gem"
-Rake::GemPackageTask.new(GEM_SPEC) do |pkg|
-  pkg.gem_spec = GEM_SPEC
-end
-
+# You can delete this after you use it
 desc "Rename project"
 task :rename do
   name = ENV['NAME'] || File.basename(Dir.pwd)
@@ -64,10 +25,4 @@ task :rename do
       `sed -i "" 's/gem_template/#{name}/g' #{path}`
     end
   end
-end
-
-desc "Run specs"
-Spec::Rake::SpecTask.new do |t|
-  t.spec_opts = ["--format", "specdoc", "--colour"]
-  t.spec_files = FileList["spec/**/*_spec.rb"]
 end
