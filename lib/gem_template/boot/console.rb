@@ -1,2 +1,2 @@
-require File.expand_path("#{File.dirname(__FILE__)}/../../../config/dep")
-Dep.console!
+require File.expand_path("#{File.dirname(__FILE__)}/../../../require")
+Require.console!

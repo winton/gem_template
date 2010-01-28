@@ -1,4 +1,4 @@
-Dep.rack-flash!
+Require.rack-flash!
 
 Application.class_eval do
   
