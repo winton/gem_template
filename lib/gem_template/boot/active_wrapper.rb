@@ -1,4 +1,4 @@
-Dep.active_wrapper!
+Require.active_wrapper!
 
 Application.class_eval do
   

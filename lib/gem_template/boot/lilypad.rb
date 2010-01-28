@@ -1,4 +1,4 @@
-Dep.lilypad!
+Require.lilypad!
 
 Application.class_eval do
   

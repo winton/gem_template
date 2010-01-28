@@ -1,17 +1,36 @@
 require 'rubygems'
-require 'dep'
+require 'require'
 
-Dep do
+Require File.dirname(__FILE__) do
   
   gem(:active_wrapper, '=0.2.3') { require 'active_wrapper' }
   gem :cucumber, '=0.6.2'
-  gem :dep, '=0.1.2'
   gem(:haml, '=2.2.17') { require %w(haml sass) }
   gem(:lilypad, '=0.3.0') { require 'lilypad' }
   gem(:'rack-flash', '=0.1.1') { require 'rack-flash' }
   gem(:rake, '=0.8.7') { require 'rake' }
+  gem :require, '=0.1.5'
   gem :rspec, '=1.3.0'
   gem(:sinatra, '=0.9.4') { require 'sinatra/base' }
+  
+  gemspec do
+    author 'Winton Welsh'
+    dependencies do
+      gem :active_wrapper
+      gem :haml
+      gem :lilypad
+      gem :'rack-flash'
+      gem :require
+      gem :sinatra
+    end
+    email 'mail@wintoni.us'
+    name 'gem_template'
+    homepage "http://github.com/winton/#{name}"
+    summary ""
+    version '0.1.0'
+  end
+  
+  bin { require 'lib/gem_template' }
   
   console do
     gem :active_wrapper
@@ -21,26 +40,6 @@ Dep do
     require 'lib/gem_template/boot/active_wrapper'
     require 'lib/gem_template/boot/model'
   end
-  
-  gemspec do
-    author 'Winton Welsh'
-    dependencies do
-      gem :active_wrapper
-      gem :dep
-      gem :haml
-      gem :lilypad
-      gem :'rack-flash'
-      gem :sinatra
-    end
-    email 'mail@wintoni.us'
-    name 'gem_template'
-    homepage "http://github.com/winton/#{name}"
-    root File.expand_path("#{File.dirname(__FILE__)}/../")
-    summary ""
-    version '0.1.0'
-  end
-  
-  bin { require 'lib/gem_template' }
   
   lib do
     gem :haml
@@ -60,11 +59,11 @@ Dep do
     gem(:active_wrapper) { require 'active_wrapper/tasks' }
     gem(:rake) { require 'rake/gempackagetask' }
     gem(:rspec) { require 'spec/rake/spectask' }
-    require 'dep/tasks'
+    require 'require/tasks'
   end
   
   spec_helper do
-    require 'dep/spec_helper'
+    require 'require/spec_helper'
     require 'lib/gem_template'
     require 'pp'
   end
