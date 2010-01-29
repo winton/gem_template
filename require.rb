@@ -47,6 +47,8 @@ Require File.dirname(__FILE__) do
   lib do
     gem :haml
     gem :sinatra
+    gem :active_wrapper
+    gem :'rack-flash'
     load_path 'vendor/authlogic/lib'
     require 'authlogic'
     require 'lib/gem_template/boot/application'

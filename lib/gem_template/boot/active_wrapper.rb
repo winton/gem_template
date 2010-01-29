@@ -1,5 +1,3 @@
-Require.active_wrapper!
-
 Application.class_eval do
   
   $db, $log, $mail = ActiveWrapper.setup(
