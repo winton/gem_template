@@ -36,6 +36,7 @@ Require File.dirname(__FILE__) do
   console do
     gem :active_wrapper
     gem :sinatra
+    gem :active_wrapper
     require 'lib/gem_template/boot/application'
     require 'lib/gem_template/boot/sinatra'
     require 'lib/gem_template/boot/active_wrapper'
@@ -45,6 +46,8 @@ Require File.dirname(__FILE__) do
   lib do
     gem :haml
     gem :sinatra
+    gem :active_wrapper
+    gem :'rack-flash'
     require 'lib/gem_template/boot/application'
     require 'lib/gem_template/boot/sinatra'
     require 'lib/gem_template/boot/session'
