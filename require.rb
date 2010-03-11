@@ -9,7 +9,7 @@ Require do
   gem(:lilypad, '=0.3.0') { require 'lilypad' }
   gem(:'rack-flash', '=0.1.1') { require 'rack-flash' }
   gem(:rake, '=0.8.7') { require 'rake' }
-  gem :require, '=0.2.5'
+  gem :require, '=0.2.6'
   gem :rspec, '=1.3.0'
   gem(:sinatra, '=0.9.4') { require 'sinatra/base' }
   
