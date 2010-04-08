@@ -1,10 +1,12 @@
 require "#{File.dirname(__FILE__)}/require"
 Require.rakefile!
 
-ActiveWrapper::Tasks.new(
-  :base => File.dirname(__FILE__),
-  :env => ENV['ENV']
-)
+unless defined?(ActiveWrapper::Tasks)
+  ActiveWrapper::Tasks.new(
+    :base => File.dirname(__FILE__),
+    :env => ENV['ENV']
+  )
+end
 
 # You can delete this after you use it
 desc "Rename project"
