@@ -12,7 +12,7 @@ Require do
   gem(:rake, '=0.8.7') { require 'rake' }
   gem :require, '=0.2.7'
   gem :rspec, '=1.3.0'
-  gem(:sinatra, '=0.9.4') { require 'sinatra/base' }
+  gem(:sinatra, '=1.0') { require 'sinatra/base' }
   
   gemspec do
     author 'Winton Welsh'
