@@ -1,7 +1,7 @@
 require "#{File.dirname(__FILE__)}/require"
 Require.rakefile!
 
-unless defined?(ActiveWrapper::Tasks)
+if defined?(ActiveWrapper::Tasks)
   ActiveWrapper::Tasks.new(
     :base => File.dirname(__FILE__),
     :env => ENV['ENV']
