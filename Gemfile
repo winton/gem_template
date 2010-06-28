@@ -8,12 +8,16 @@ v = {
 }
 
 group :gemspec do
-  gem 'active_wrapper', v[:active_wrapper], :require => %w(active_wrapper)
+  gem 'active_wrapper', v[:active_wrapper]
   gem 'bundler', v[:bundler]
 end
 
 group :gemspec_dev do
   gem 'rspec', v[:rspec]
+end
+
+group :lib do
+  gem 'active_wrapper', v[:active_wrapper], :require => %w(active_wrapper)
 end
 
 group :rake do
