@@ -49,4 +49,9 @@ end
 
 group :spec do
   gem 'rack-test', v[:rack_test], :require => %w(rack/test)
+  gem 'rspec', v[:rspec], :require => %w(
+    spec/adapters/mock_frameworks/rspec
+    spec/runner/formatter/progress_bar_formatter
+    spec/runner/formatter/text_mate_formatter
+  )
 end
