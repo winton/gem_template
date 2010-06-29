@@ -1,6 +1,5 @@
 .DS_Store
 *.gem
-*.gemspec
 *.log
 config/database.yml
 config/deploy.rb
