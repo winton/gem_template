@@ -3,6 +3,12 @@ require 'bundler'
 
 Bundler.require(:lib)
 
+$:.unshift File.expand_path(
+  File.dirname(__FILE__) + '/../vendor/authlogic/lib'
+)
+
+require 'authlogic'
+
 $:.unshift File.dirname(__FILE__) + '/gem_template'
 
 require 'version'
@@ -16,7 +22,3 @@ require 'boot/lilypad'
 require 'boot/controller'
 require 'boot/helper'
 require 'boot/model'
-
-$:.unshift File.expand_path('/../vendor/authlogic', __FILE__)
-
-require 'authlogic'
