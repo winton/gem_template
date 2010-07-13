@@ -1,7 +1,4 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'bundler'
-
 lib = File.expand_path(File.dirname(__FILE__) + "/../lib/gem_template")
 exec "irb -r #{lib}/boot/console"
