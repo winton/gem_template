@@ -16,3 +16,7 @@ require 'boot/lilypad'
 require 'boot/controller'
 require 'boot/helper'
 require 'boot/model'
+
+$:.unshift File.expand_path('/../vendor/authlogic', __FILE__)
+
+require 'authlogic'
