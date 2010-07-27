@@ -1,7 +1,6 @@
-require 'rubygems'
-require 'bundler'
+require File.expand_path('../../gems', __FILE__)
 
-Bundler.require(:console)
+GemTemplate::Gems.require(:console)
 
 require File.dirname(__FILE__) + '/application'
 require File.dirname(__FILE__) + '/sinatra'
