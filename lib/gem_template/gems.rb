@@ -6,7 +6,7 @@ unless defined?(GemTemplate::Gems)
     class Gems
     
       VERSIONS = {
-        :active_wrapper => '=0.2.7',
+        :active_wrapper => '=0.3.2',
         :rake => '=0.8.7',
         :rspec => '=1.3.0'
       }
