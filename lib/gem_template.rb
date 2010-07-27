@@ -1,7 +1,8 @@
-require 'rubygems'
-require 'bundler'
+require File.dirname(__FILE__) + '/gem_template/gems'
 
-Bundler.require(:lib)
+GemTemplate::Gems.require(:lib)
+
+require 'active_wrapper'
 
 $:.unshift File.dirname(__FILE__) + '/gem_template'
 
