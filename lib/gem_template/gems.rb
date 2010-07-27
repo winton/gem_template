@@ -10,8 +10,8 @@ unless defined?(GemTemplate::Gems)
         :cucumber => '=0.6.2',
         :haml => '=2.2.17',
         :lilypad => '=0.3.0',
-        :rack_flash => '=0.1.1',
-        :rack_test => '=0.5.3',
+        :'rack-flash' => '=0.1.1',
+        :'rack-test' => '=0.5.3',
         :rake => '=0.8.7',
         :rspec => '=1.3.0',
         :sinatra => '=1.0'
@@ -23,7 +23,7 @@ unless defined?(GemTemplate::Gems)
         :gemspec_dev => [ :cucumber, :rspec, :'rack-test' ],
         :lib => [ :active_wrapper, :haml, :lilypad, :'rack-flash', :sinatra ],
         :rake => [ :rake, :rspec ],
-        :spec => [ :rspec ]
+        :spec => [ :'rack-test', :rspec ]
       }
       
       class <<self
