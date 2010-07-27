@@ -1,7 +1,6 @@
-require 'rubygems'
-require 'bundler'
+require File.dirname(__FILE__) + '/gem_template/gems'
 
-Bundler.require(:lib)
+GemTemplate::Gems.require(:lib)
 
 $:.unshift File.expand_path(
   File.dirname(__FILE__) + '/../vendor/authlogic/lib'
@@ -16,8 +15,9 @@ require 'version'
 require 'boot/application'
 require 'boot/sinatra'
 require 'boot/session'
-require 'boot/flash'
 require 'boot/active_wrapper'
+require 'boot/flash'
+require 'boot/haml'
 require 'boot/lilypad'
 require 'boot/controller'
 require 'boot/helper'

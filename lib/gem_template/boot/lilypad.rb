@@ -1,3 +1,5 @@
+require 'lilypad'
+
 Application.class_eval do
   
   if File.exists?(lilypad = "#{root}/config/lilypad.txt")
