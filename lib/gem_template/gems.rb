@@ -7,14 +7,14 @@ unless defined?(GemTemplate::Gems)
     
       VERSIONS = {
         :active_wrapper => '=0.3.4',
-        :cucumber => '=0.6.2',
-        :haml => '=2.2.17',
-        :lilypad => '=0.3.0',
+        :cucumber => '=0.9.4',
+        :haml => '=3.0.24',
+        :lilypad => '=0.3.1',
         :'rack-flash' => '=0.1.1',
-        :'rack-test' => '=0.5.3',
+        :'rack-test' => '=0.5.6',
         :rake => '=0.8.7',
         :rspec => '=1.3.1',
-        :sinatra => '=1.0'
+        :sinatra => '=1.1.0'
       }
     
       TYPES = {
