@@ -13,7 +13,7 @@ unless defined?(GemTemplate::Gems)
         :'rack-flash' => '=0.1.1',
         :'rack-test' => '=0.5.3',
         :rake => '=0.8.7',
-        :rspec => '=1.3.0',
+        :rspec => '=1.3.1',
         :sinatra => '=1.0'
       }
     
