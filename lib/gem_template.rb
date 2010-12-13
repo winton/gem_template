@@ -8,17 +8,17 @@ $:.unshift File.expand_path(
 
 require 'authlogic'
 
-$:.unshift File.dirname(__FILE__) + '/gem_template'
+$:.unshift File.dirname(__FILE__)
 
-require 'version'
+require 'gem_template/version'
 
-require 'boot/application'
-require 'boot/sinatra'
-require 'boot/session'
-require 'boot/active_wrapper'
-require 'boot/flash'
-require 'boot/haml'
-require 'boot/lilypad'
-require 'boot/controller'
-require 'boot/helper'
-require 'boot/model'
+require 'gem_template/boot/application'
+require 'gem_template/boot/sinatra'
+require 'gem_template/boot/session'
+require 'gem_template/boot/active_wrapper'
+require 'gem_template/boot/flash'
+require 'gem_template/boot/haml'
+require 'gem_template/boot/lilypad'
+require 'gem_template/boot/controller'
+require 'gem_template/boot/helper'
+require 'gem_template/boot/model'
