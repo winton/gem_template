@@ -4,9 +4,9 @@ GemTemplate::Gems.require(:lib)
 
 require 'active_wrapper'
 
-$:.unshift File.dirname(__FILE__) + '/gem_template'
+$:.unshift File.dirname(__FILE__)
 
-require 'version'
+require 'gem_template/version'
 
 class GemTemplate
   
