@@ -1,6 +1,5 @@
 unless defined?(GemTemplate::Gems)
   
-  require 'ostruct'
   require 'yaml'
   
   class GemTemplate
