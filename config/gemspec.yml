@@ -1,0 +1,12 @@
+name: gem_template
+version: 0.1.0
+authors:
+  -
+email:
+homepage:
+summary:
+description:
+dependencies:
+  - active_wrapper
+development_dependencies:
+  - rspec

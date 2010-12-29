@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/gem_template/gems'
 
-GemTemplate::Gems.require(:lib)
+GemTemplate::Gems.activate %w(active_wrapper)
 
 require 'active_wrapper'
 
