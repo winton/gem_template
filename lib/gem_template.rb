@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/gem_template/gems'
 
-GemTemplate::Gems.require(:lib)
+GemTemplate::Gems.activate %w(active_wrapper haml lilypad rack-flash sinatra)
 
 $:.unshift File.expand_path(
   File.dirname(__FILE__) + '/../vendor/authlogic/lib'
@@ -9,8 +9,6 @@ $:.unshift File.expand_path(
 require 'authlogic'
 
 $:.unshift File.dirname(__FILE__)
-
-require 'gem_template/version'
 
 require 'gem_template/boot/application'
 require 'gem_template/boot/sinatra'

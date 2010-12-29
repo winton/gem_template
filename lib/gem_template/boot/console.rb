@@ -1,6 +1,6 @@
 require File.expand_path('../../gems', __FILE__)
 
-GemTemplate::Gems.require(:console)
+GemTemplate::Gems.activate %w(active_wrapper sinatra)
 
 require File.dirname(__FILE__) + '/application'
 require File.dirname(__FILE__) + '/sinatra'
