@@ -14,5 +14,6 @@ dependencies:
   - sinatra
 development_dependencies:
   - cucumber
+  - rake
   - rspec
   - rack-test
