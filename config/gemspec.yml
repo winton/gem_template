@@ -9,4 +9,5 @@ description:
 dependencies:
   - active_wrapper
 development_dependencies:
+  - rake
   - rspec
