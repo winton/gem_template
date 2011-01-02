@@ -1,6 +1,6 @@
 gem_template:
   rake: >=0.8.7
-  rspec: <2
+  rspec: ~>1.0
   default:
     framework_fixture: =0.1.0
     rack-test: =0.5.6
