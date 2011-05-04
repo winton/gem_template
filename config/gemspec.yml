@@ -7,13 +7,11 @@ homepage:
 summary:
 description:
 dependencies:
-  - active_wrapper
   - haml
   - lilypad
   - rack-flash
   - sinatra
 development_dependencies:
-  - cucumber
   - rake
   - rspec
   - rack-test
