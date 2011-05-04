@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/gem_template/gems'
 
-GemTemplate::Gems.activate %w(active_wrapper haml lilypad rack-flash sinatra)
+GemTemplate::Gems.activate %w(haml lilypad rack-flash sinatra)
 
 $:.unshift File.dirname(__FILE__)
 
