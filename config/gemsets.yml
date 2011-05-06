@@ -2,6 +2,7 @@ gem_template:
   rake: >=0.8.7
   rspec: ~>1.0
   default:
+  	active_wrapper: =0.4.5
     haml: =3.1.1
     lilypad: =0.3.1
     rack-flash: =0.1.1
