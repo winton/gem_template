@@ -5,8 +5,8 @@ GemTemplate::Gems.activate %w(active_wrapper haml lilypad rack-flash sinatra)
 $:.unshift File.dirname(__FILE__)
 
 require 'gem_template/boot/application'
-require 'gem_template/boot/log'
 require 'gem_template/boot/sinatra'
+require 'gem_template/boot/log'
 require 'gem_template/boot/session'
 require 'gem_template/boot/active_wrapper'
 require 'gem_template/boot/flash'
