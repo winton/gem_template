@@ -1,18 +1,15 @@
 require 'uri'
 require 'redis'
 
-Application.class_eval do
-  helpers do
-
-    def redis
-      define_redis
-    end
-  end
-end
-
-def define_redis
+def redis
   $redis ||= (
-    url = URI('redis://localhost:6379/0')
+
+    env = ENV['RACK_ENV'] || 'development'
+    yaml = YAML.load(File.read('config/redis.yml'))[env]
+    db = yaml.keys.first
+    config = yaml[db]
+    config['db'] = db        
+    url = URI("redis://#{config['host']}:#{config['port']}/#{config['db']}")
 
     ::Redis.new(
       :host => url.host,
@@ -22,5 +19,3 @@ def define_redis
     )
   )
 end
-
-define_redis
