@@ -9,7 +9,6 @@ description:
 dependencies:
   - haml
   - lilypad
-  - rack-flash
   - sinatra
 development_dependencies:
   - rake
