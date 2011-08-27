@@ -8,8 +8,9 @@ def redis
     yaml = YAML.load(File.read('config/redis.yml'))[env]
     db = yaml.keys.first
     config = yaml[db]
-    config['db'] = db        
-    url = URI("redis://#{config['host']}:#{config['port']}/#{config['db']}")
+    config['db'] = db
+    $redis_url = "#{config['host']}:#{config['port']}/#{config['db']}"
+    url = URI("redis://#{$redis_url}")
 
     ::Redis.new(
       :host => url.host,
@@ -19,3 +20,5 @@ def redis
     )
   )
 end
+
+redis
