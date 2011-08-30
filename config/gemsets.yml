@@ -2,8 +2,8 @@ gem_template:
   rake: >=0.8.7
   rspec: ~>1.0
   default:
-    haml: =3.1.1
+    haml: =3.1.2
     lilypad: =0.3.1
-    rack-test: =0.6.0
-    redis: =2.1.1
+    rack-test: =0.6.1
+    redis: =2.2.2
     sinatra: =1.2.6
