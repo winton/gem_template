@@ -1,5 +1,7 @@
 = Authlogic
 
+** Please note the latest version is compatible with rails 3 only. Rails 2 should use version 2.X.X **
+
 Authlogic is a clean, simple, and unobtrusive ruby authentication solution.
 
 A code example can replace a thousand words...
@@ -67,8 +69,12 @@ If you find a bug or a problem please post it in the issues section. If you need
 * <b>Authlogic OpenID addon:</b> http://github.com/binarylogic/authlogic_openid
 * <b>Authlogic LDAP addon:</b> http://github.com/binarylogic/authlogic_ldap
 * <b>Authlogic Facebook Connect:</b> http://github.com/kalasjocke/authlogic_facebook_connect
+* <b>Authlogic Facebook Connect (New JS API):</b> http://github.com/studybyte/authlogic_facebook_connect
+* <b>Authlogic Facebook Shim</b> http://github.com/james2m/authlogic_facebook_shim
 * <b>Authlogic OAuth (Twitter):</b> http://github.com/jrallison/authlogic_oauth
+* <b>Authlogic Oauth and OpenID:</b> http://github.com/viatropos/authlogic-connect
 * <b>Authlogic PAM:</b> http://github.com/nbudin/authlogic_pam
+* <b>Authlogic x509:</b> http://github.com/auth-scc/authlogic_x509
 
 If you create one of your own, please let me know about it so I can add it to this list. Or just fork the project, add your link, and send me a pull request.
 
@@ -78,7 +84,7 @@ Apparently there is a bug with apache / passenger for v2.1.X with sessions not w
 
 == Documentation explanation
 
-You can find anything you want about Authlogic in the {documentation}[http://authlogic.rubyforge.org], all that you need to do is understand the basic design behind it.
+You can find anything you want about Authlogic in the {documentation}[http://rdoc.info/projects/binarylogic/authlogic], all that you need to do is understand the basic design behind it.
 
 That being said, there are 2 models involved during authentication. Your Authlogic model and your ActiveRecord model:
 
@@ -87,7 +93,7 @@ That being said, there are 2 models involved during authentication. Your Authlog
 
 Each of the above has its various sub modules that contain common logic. The sub modules are responsible for including *everything* related to it: configuration, class methods, instance methods, etc.
 
-For example, if you want to timeout users after a certain period of inactivity, you would look in <b>Authlogic::Session::Timeout</b>. To help you out, I listed the following publicly relevant modules with short descriptions. For the sake of brevity, there are more modules than listed here, the ones not listed are more for internal use, but you can easily read up on them in the {documentation}[http://authlogic.rubyforge.org].
+For example, if you want to timeout users after a certain period of inactivity, you would look in <b>Authlogic::Session::Timeout</b>. To help you out, I listed the following publicly relevant modules with short descriptions. For the sake of brevity, there are more modules than listed here, the ones not listed are more for internal use, but you can easily read up on them in the {documentation}[http://rdoc.info/projects/binarylogic/authlogic].
 
 === Authlogic::ActsAsAuthentic sub modules
 
@@ -150,7 +156,7 @@ What if your user sessions controller could look just like your other controller
     def new
       @user_session = UserSession.new
     end
-    
+
     def create
       @user_session = UserSession.new(params[:user_session])
       if @user_session.save
@@ -159,7 +165,7 @@ What if your user sessions controller could look just like your other controller
         render :action => :new
       end
     end
-    
+
     def destroy
       current_user_session.destroy
       redirect_to new_user_session_url
@@ -183,13 +189,13 @@ Or how about persisting the session...
 
   class ApplicationController
     helper_method :current_user_session, :current_user
-    
+
     private
       def current_user_session
         return @current_user_session if defined?(@current_user_session)
         @current_user_session = UserSession.find
       end
-      
+
       def current_user
         return @current_user if defined?(@current_user)
         @current_user = current_user_session && current_user_session.user
@@ -200,17 +206,15 @@ Or how about persisting the session...
 
 Install the gem / plugin (recommended)
 
-From rubyforge:
+Rails 3:
 
   $ sudo gem install authlogic
 
-Or from github:
+Rails 2:
 
-  $ sudo gem install binarylogic-authlogic
+  $ sudo gem install authlogic --version=2.1.6
 
-Now just add the gem dependency in your projects configuration.
-
-Or you can install this as a plugin:
+Or install as a plugin:
 
   script/plugin install git://github.com/binarylogic/authlogic.git
 
