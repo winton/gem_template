@@ -1,1 +1,1 @@
-require File.expand_path(File.dirname(__FILE__) + '/../lib/gem_template')
+require File.expand_path('../../lib/gem_template', __FILE__)
