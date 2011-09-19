@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-lib = File.expand_path(File.dirname(__FILE__) + "/../lib/gem_template")
-exec "irb -r #{lib}/boot/console"
+lib = File.expand_path(File.dirname(__FILE__) + "/../lib")
+exec "irb -r #{lib}/gem_template/console"
