@@ -1,17 +1,14 @@
-require File.dirname(__FILE__) + '/gem_template/gems'
+require "rubygems"
+require "bundler"
 
-GemTemplate::Gems.activate %w(active_wrapper)
-
-require 'active_wrapper'
+Bundler.require(:default)
 
 $:.unshift File.dirname(__FILE__)
-
-require 'gem_template/version'
 
 class GemTemplate
   
   def initialize(environment, root)
-    @db, @log, @mail = ActiveWrapper.setup(
+    @db, @log = ActiveWrapper.setup(
       :base => root,
       :env => environment
     )
