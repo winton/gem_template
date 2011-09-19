@@ -1,16 +1,17 @@
 require "rubygems"
 require "bundler"
 
-Bundler.require(:default)
+Bundler.setup(:default)
 
 $:.unshift File.dirname(__FILE__)
 
-require 'gem_template/boot/application'
-require 'gem_template/boot/sinatra'
-require 'gem_template/boot/log'
-require 'gem_template/boot/session'
-require 'gem_template/boot/haml'
-require 'gem_template/boot/lilypad'
-require 'gem_template/boot/redis'
-require 'gem_template/boot/controller'
-require 'gem_template/boot/helper'
+require 'gem_template/application'
+
+require 'application/sinatra'
+require 'application/log'
+require 'application/session'
+require 'application/haml'
+require 'application/lilypad'
+require 'application/redis'
+require 'application/controller'
+require 'application/helper'
