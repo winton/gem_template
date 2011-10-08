@@ -18,4 +18,7 @@ Gem::Specification.new do |s|
   s.files = `cd #{root} && git ls-files`.split("\n")
   s.require_paths = %w(lib)
   s.test_files = `cd #{root} && git ls-files -- {features,test,spec}/*`.split("\n")
+
+  s.add_dependency "active_wrapper", "= 0.4.5"
+  s.add_development_dependency "rspec", "~> 1.0"
 end

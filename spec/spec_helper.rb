@@ -1,7 +1,8 @@
 require "pp"
 require "bundler"
 
-Bundler.require(:spec)
+Bundler.require(:default)
+Bundler.require(:development)
 
 $root = File.expand_path('../../', __FILE__)
 

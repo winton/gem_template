@@ -1,7 +1,7 @@
-require "rubygems"
-require "bundler"
+require 'rubygems'
 
-Bundler.require(:default)
+gem 'active_wrapper', '= 0.4.5'
+require 'active_wrapper'
 
 $:.unshift File.dirname(__FILE__)
 
