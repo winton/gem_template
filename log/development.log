@@ -1,0 +1,32 @@
+Sass is in the process of being separated from Haml,
+and will no longer be bundled at all in Haml 3.2.0.
+Please install the 'sass' gem if you want to use Sass.
+
+/Users/wwelsh/sites/repositories/active/gem_template/spec/gem_template_spec.rb:3:in `<top (required)>': uninitialized constant Object::GemTemplate (NameError)
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/example_group_runner.rb:15:in `load'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/example_group_runner.rb:15:in `block in load_files'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/example_group_runner.rb:14:in `each'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/example_group_runner.rb:14:in `load_files'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/options.rb:134:in `run_examples'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/command_line.rb:9:in `run'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/bin/spec:5:in `<top (required)>'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/bin/spec:19:in `load'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/bin/spec:19:in `<main>'
+Sass is in the process of being separated from Haml,
+and will no longer be bundled at all in Haml 3.2.0.
+Please install the 'sass' gem if you want to use Sass.
+
+/Users/wwelsh/sites/repositories/active/gem_template/spec/gem_template_spec.rb:3:in `<top (required)>': uninitialized constant Object::GemTemplate (NameError)
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/example_group_runner.rb:15:in `load'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/example_group_runner.rb:15:in `block in load_files'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/example_group_runner.rb:14:in `each'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/example_group_runner.rb:14:in `load_files'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/options.rb:134:in `run_examples'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/lib/spec/runner/command_line.rb:9:in `run'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/gems/rspec-1.3.2/bin/spec:5:in `<top (required)>'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/bin/spec:19:in `load'
+	from /Users/wwelsh/.rvm/gems/ruby-1.9.2-p290@gem_template/bin/spec:19:in `<main>'
+Sass is in the process of being separated from Haml,
+and will no longer be bundled at all in Haml 3.2.0.
+Please install the 'sass' gem if you want to use Sass.
+
