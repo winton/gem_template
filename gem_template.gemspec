@@ -18,4 +18,8 @@ Gem::Specification.new do |s|
   s.files = `cd #{root} && git ls-files`.split("\n")
   s.require_paths = %w(lib)
   s.test_files = `cd #{root} && git ls-files -- {features,test,spec}/*`.split("\n")
+
+  s.add_development_dependency "framework_fixture", "= 0.1.3"
+  s.add_development_dependency "rack-test",         "= 0.6.1"
+  s.add_development_dependency "rspec",             "~> 1.0"
 end
