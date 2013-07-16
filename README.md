@@ -19,15 +19,15 @@ A gem template for new projects.
 
 ###Available branches
 
-	* master
-	* active_wrapper
-	* rails
-	* sinatra
-	* sinatra-activerecord
-	* sinatra-activerecord-authlogic
-	* spec-activerecord
-	* spec-framework
-	* stasis
+* master
+* active_wrapper
+* rails
+* sinatra
+* sinatra-activerecord
+* sinatra-activerecord-authlogic
+* spec-activerecord
+* spec-framework
+* stasis
 
 ### Contribute
 
