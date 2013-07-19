@@ -15,7 +15,7 @@ A gem template for new projects.
 
 ###Create a new project
 
-	gem_template <project_name> <branch>
+	gem_template [project_name] [ProjectName] [branch...]
 
 ###Available branches
 
