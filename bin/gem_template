@@ -18,8 +18,8 @@ echo $1 > .ruby-gemset
 echo -e "\nInstalling gems..."
 gem install bundler && bundle
 
-# echo "\ngem_template -> $1..."
-# cd $1 && stencil $1
+echo "\ngem_template -> $1..."
+cd $1 && namer --camelize gem_template:$1
 
 # -- replace
 # #!/usr/bin/env ruby
