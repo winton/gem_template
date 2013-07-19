@@ -15,11 +15,23 @@ git fetch
 echo -e "\nWriting .ruby-gemset..."
 echo $1 > .ruby-gemset
 
-echo -e "\nInstalling gems..."
+echo -e "\nInstalling base gems..."
 gem install bundler && bundle
 
-echo "\ngem_template -> $1..."
-cd $1 && namer --camelize gem_template:$1
+echo -e "\nGemTemplate -> $2..."
+namer gem_template:$1 GemTemplate:$2
+
+echo ""
+echo $'\e[1;31m'"To finish setting up your project:"
+echo $'\e[0m'
+echo "    cd $1"
+
+for i in ${@:3}; do
+	echo "    git merge origin/$i"
+done
+
+echo "    bundle"
+echo ""
 
 # -- replace
 # #!/usr/bin/env ruby
