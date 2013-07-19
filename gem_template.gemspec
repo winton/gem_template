@@ -1,24 +1,26 @@
-# -*- encoding: utf-8 -*-
-root = File.expand_path('../', __FILE__)
-lib = "#{root}/lib"
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-$:.unshift lib unless $:.include?(lib)
+Gem::Specification.new do |spec|
+  spec.name          = "gem_template"
+  spec.version       = "0.0.1"
+  spec.authors       = [""]
+  spec.email         = [""]
+  spec.description   = %q{TODO: Write a gem description}
+  spec.summary       = %q{TODO: Write a gem summary}
+  spec.homepage      = ""
+  spec.license       = "MIT"
 
-Gem::Specification.new do |s|
-  s.name        = "gem_template"
-  s.version     = '0.1.0'
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = []
-  s.email       = []
-  s.homepage    = "http://"
-  s.summary     = %q{}
-  s.description = %q{}
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  s.executables = `cd #{root} && git ls-files bin/*`.split("\n").collect { |f| File.basename(f) }
-  s.files = `cd #{root} && git ls-files`.split("\n")
-  s.require_paths = %w(lib)
-  s.test_files = `cd #{root} && git ls-files -- {features,test,spec}/*`.split("\n")
+  spec.add_dependency "active_wrapper"
 
-  s.add_dependency "active_wrapper", "= 0.4.5"
-  s.add_development_dependency "rspec", "~> 1.0"
+  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "simplecov"
 end
