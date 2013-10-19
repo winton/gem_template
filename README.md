@@ -1,6 +1,6 @@
 ##GemTemplate
 
-A gem template for new projects.
+A gem template for new Ruby projects.
 
 ###Goals
 
