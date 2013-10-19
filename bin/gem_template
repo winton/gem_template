@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo ""
-git clone https://github.com/winton/gem_template.git $1
+git clone 'https://github.com/winton/gem_template.git' $1
 
 if [ $? -eq 0 ]; then
   cd $1
