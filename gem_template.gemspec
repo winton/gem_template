@@ -5,11 +5,11 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |spec|
   spec.name          = "gem_template"
   spec.version       = "0.0.1"
-  spec.authors       = [""]
-  spec.email         = [""]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.authors       = ["Winton Welsh"]
+  spec.email         = ["mail@wintoni.us"]
+  spec.description   = %q{Gem template for new Ruby projects}
+  spec.summary       = %q{Gem template for new Ruby projects.}
+  spec.homepage      = "https://github.com/winton/gem_template"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
