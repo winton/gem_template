@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "gem_template"
-  spec.version       = "0.0.2"
+  spec.version       = "0.0.3"
   spec.authors       = ["Winton Welsh"]
   spec.email         = ["mail@wintoni.us"]
   spec.description   = %q{Gem template for new Ruby projects}
