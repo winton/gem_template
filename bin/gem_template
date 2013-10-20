@@ -1,37 +1,40 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-echo ""
-git clone 'https://github.com/winton/gem_template.git' $1
+dirname   = ARGV[0]
+classname = ARGV[0].gsub(/(^.|_.)/) { |s| s[-1..-1].upcase }
 
-if [ $? -eq 0 ]; then
-  cd $1
-else
-  exit 1
-fi
+puts ""
+exit unless system(
+  "git clone https://github.com/winton/gem_template.git #{dirname}"
+)
 
-echo -e "\nFetching..."
-git fetch
+Dir.chdir(dirname) do
+  puts "\nFetching..."
+  system("git fetch")
 
-echo -e "\nWriting .ruby-gemset..."
-echo $1 > .ruby-gemset
+  puts "\nWriting .ruby-gemset..."
+  system("echo #{dirname} > .ruby-gemset")
 
-echo -e "\nInstalling base gems..."
-gem install bundler && bundle
+  puts "\nWriting .ruby-version..."
+  system("echo #{RUBY_VERSION}-p#{RUBY_PATCHLEVEL} > .ruby-version")
 
-echo -e "\nGemTemplate -> $2..."
-namer gem_template:$1 GemTemplate:$2
+  puts "\nInstalling namer..."
+  system("gem install namer")
 
-echo ""
-echo $'\e[1;31m'"To finish setting up your project:"
-echo $'\e[0m'
-echo "    cd $1"
+  puts "\nGemTemplate -> #{classname}..."
+  system("namer gem_template:#{dirname} GemTemplate:#{classname}")
 
-for i in ${@:3}; do
-	echo "    git merge origin/$i"
-done
+  puts "\nMerging branches..."
+  ARGV[1..-1].each do |branch|
+    system("git merge origin/#{branch}")
+  end
+end
 
-echo "    bundle"
-echo ""
+puts ""
+puts "\e[32mTo finish setting up your project:\e[0m"
+puts "    cd #{dirname}"
+puts "    bundle"
+puts ""
 
 # -- replace
 # #!/usr/bin/env ruby
