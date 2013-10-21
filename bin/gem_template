@@ -9,24 +9,32 @@ exit unless system(
 )
 
 Dir.chdir(dirname) do
-  puts "\nFetching..."
-  system("git fetch")
 
   puts "\nWriting .ruby-gemset..."
   system("echo #{dirname} > .ruby-gemset")
 
-  puts "\nWriting .ruby-version..."
-  system("echo #{RUBY_VERSION}-p#{RUBY_PATCHLEVEL} > .ruby-version")
+  if RUBY_PATCHLEVEL.to_i < 0
+    puts "\e[31m\nCouldn't write .ruby-version :( Removing it for now.\e[0m"
+    system("rm .ruby-version")
+  else
+    puts "\nWriting .ruby-version..."
+    system("echo #{RUBY_VERSION}-p#{RUBY_PATCHLEVEL} > .ruby-version")
+  end
 
   puts "\nInstalling namer..."
   system("gem install namer")
 
-  puts "\nGemTemplate -> #{classname}..."
+  puts "\nRenaming GemTemplate to #{classname}..."
   system("namer gem_template:#{dirname} GemTemplate:#{classname}")
 
-  puts "\nMerging branches..."
-  ARGV[1..-1].each do |branch|
-    system("git merge origin/#{branch}")
+  unless ARGV[1..-1].empty?
+    puts "\nFetching..."
+    system("git fetch")
+
+    puts "\nMerging branches..."
+    ARGV[1..-1].each do |branch|
+      system("git merge origin/#{branch}")
+    end
   end
 end
 
